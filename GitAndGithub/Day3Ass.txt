@@ -1,0 +1,40 @@
+Q1 What is Git?
+
+Answer:Git is a popular version control system(VCS).Git is used for
+
+a. Tracking code changes
+b. Tracking who made changes like history of the files
+c. Coding Collaborations.
+
+Q2 What do you understand by the term Version Control System?
+
+Answer:It is a system that records changes to a file or set of files over time, so that
+we can recall specific versions later, i.e., for every source code changes in a
+file a new version will be created.
+
+Q3 What is GitHub?
+
+Answer:It is a tool which acts as a Git Server.
+
+Q4 Mention some popular Git hosting services?
+
+Answer:Github, Gitlab,BitBucket,Gitblit etc.
+
+Q5 Different types of version control system?
+
+Answer:1. Centralized Version Control System (CVCS)
+       2. Distributed Version Control System (DVCS)
+
+Q6 What benefits comes with using GIT?
+
+Answer:a. Tracking code changes
+       b. Tracking who made changes like history of the files
+       c. Coding Collaborations
+
+Q7 What is a Git repository?
+
+Answer:It is local repository which contains copy of the remote repository.
+
+Q8 How can you initialize a repository in Git?
+
+Answer: git init
