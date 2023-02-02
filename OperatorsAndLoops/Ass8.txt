@@ -1,0 +1,88 @@
+Q1.What are the Conditionals Operators in Java?
+
+Ans:When a condition consists of multiple boolean expressions, they are used. Use
+conditional operators to combine two expressions, such as when we wish to print
+a number only if it is larger than 2 and less than 5, respectively.
+
+Q2.What are the types of operators based on the number of operands?
+
+Ans:
+   Assignment Operator
+   Relational Operators
+   Logical Operators
+   Ternary Operator
+
+Q3.What is the use of Switch case in Java programming?
+
+Ans:Switch case statement evaluates a given expression and based on the evaluated value(matching a certain condition), it executes the statements associated with it. Basically, it is used to perform different actions based on different conditions(cases).
+
+Q4.What are the priority levels of arithmetic operation in Java?
+
+Ans:The acronym PEMDAS is common. It stands for Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.
+
+Q5.What are the conditional Statements and use of conditional statements in Java?
+
+Ans:Java follows suit by using conditional statements to manage the program's flow.
+This is crucial because at some time, in order to advance with our code, we must
+fulfil requirements. For example, the console's yes or no input will determine
+whether the programme is to be continued or cancelled.
+Java has the following conditional statements:
+● If statement
+● else statement
+● If-else Ternary
+● Nested if-else
+● Switch statement
+
+Q6. What is the syntax of if else statement?
+
+Ans:if(condition1){  
+//code to be executed if condition1 is true  
+}else if(condition2){  
+//code to be executed if condition2 is true  
+}  
+else if(condition3){  
+//code to be executed if condition3 is true  
+}  
+...  
+else{  
+//code to be executed if all the conditions are false  
+}  
+
+Q7.What are the 3 types of iterative statements in Java?
+
+Ans:In Java, we have 3 types of iterative statements -
+
+1. The while loop
+2. The for loop
+3. The do-while loop
+
+Q8. Write the difference between for loop and do-while loop?
+
+Ans:for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization, condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping.
+
+Syntax:
+
+for (initialization condition; testing condition;increment/decrement)
+{
+    statement(s)
+}
+
+do-while loop:
+
+do while loop is similar to while loop with the only difference that it checks for the condition after executing the statements.
+
+Q9. Write a program to print numbers from 1 to 10?
+
+Ans:public class test
+{
+    public static void main(String [] args)
+    {
+       
+       for(int i=1;i<=10;i++)
+       {
+        System.out.println(i);
+       }
+      
+        
+    }
+}
