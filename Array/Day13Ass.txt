@@ -1,0 +1,67 @@
+Q1. What is the default value of Array for different data types?
+
+Ans:java will assign the default value 0 to each element of the array in the case of an int array. Similarly, in the case of a boolean array, it will be false, in the case of a String array the default value is null in java.
+
+Q2. Can you pass the negative number in Array size?
+
+Ans:No
+
+Q3. Where does Array stored in JVM memory?
+
+Ans:Heap.
+
+Q4. What are the disadvantages of Array?
+
+Ans:1> once we create the size cannot be increaseddecreased
+    2> It stores only homogeneous data elements.
+
+Q5. What is an Anonymous Array in Java ? Give an example?
+
+Ans:An array without a name is called Anonymous Array.This type of array is create, just for instance use.
+Example:
+class Calc{
+    public int add(int nums[])
+    {
+        int result=0;
+        for(int n:nums)
+        {
+            result=result+n;
+        }
+        return result;
+    }
+}
+class Test{
+
+    public static void main(String args[]){
+        Calc obj=new Calc();
+        
+        
+int result=obj.add(new int[]{1,2,3,4});
+   
+     
+
+        System.out.print(result);
+   }
+   
+   }
+
+Q6. What are the different ways to traverse an Array in java?
+
+Ans:You can traverse through an array using for loop or enhance for loop.
+
+Q7. What is the difference between length and length() method. Give an Example?
+
+Ans:length:It is a property of the Array type class.
+
+Example:
+int[] a= {10,20,30};
+System.out.println(a.length);//3
+
+length():It is a method of String class.
+
+Example:
+String[] names={"sachin","saurav","dhoni","yuvi"};
+System.out.println(names[0].length());//6
+
+
+
