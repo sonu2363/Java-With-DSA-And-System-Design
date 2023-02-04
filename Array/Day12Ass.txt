@@ -1,0 +1,63 @@
+Q1. What do you mean by an Array?
+
+Ans:It refers to index collection of fixed no of homogeneous data elements.
+
+Q2. How to create an Array?
+
+Ans: Single Dimension Array
+
+ int[] a//recommended to use as variable is separated from tdpeÃ
+ int a[]
+ int []a
+ int[6] a // compile time error. we cannot specifd the size.
+
+ 2-D Array
+
+ Declaration(All are valid)
+
+int[][] a ;
+int a[][];
+int [][]a;
+int[] []a;
+int[] a[];
+int []a[];
+
+Q3. Can we change the size of an array at run time?
+
+Ans:You can't change the size of the array after it's constructed. 
+
+Q4. Can you declare an array without assigning the size of an array?
+
+Ans:Yes
+
+Q5. What is the default value of array?
+
+Ans:0
+
+Q6. What is a 1D array with an example?
+
+Ans:Single Dimension Array
+
+ int[] a//recommended to use as variable is separated from tdpeÃ
+ int a[]
+ int []a
+ int[6] a // compile time error. we cannot specifd the size.
+
+ Q7. Write a program on a 2D array?
+
+ Ans:class Test
+{    
+    public static void main(String [] args)
+    {
+        int arr[][]={{1,2},{3,4},{4}};
+        for(int a[]:arr)
+        {
+            for(int b:a)
+            {
+                System.out.print(b + " ");
+            }
+            System.out.println();
+           
+        }
+    }    
+}
