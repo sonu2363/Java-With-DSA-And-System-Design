@@ -1,0 +1,96 @@
+Q1. Write a simple String program to take input from user?
+
+Ans:
+import java.util.Scanner;
+class Test{
+    public static void main(String args[]){
+      Scanner sc=new Scanner(System.in);      
+      System.out.print("Enter a string:");
+      String str=sc.nextLine();
+      System.out.print("you hava entered:"+str);
+   }
+   }
+
+Q2. How do you concatenate two strings in Java? Give an example.
+
+Ans:Concatenation is the process of combining two or more strings into a single string. This can be done in multiple ways, including using the "+" operator or the "concat()" method.
+
+Example:
+Using the "+" operator:
+String str1 = "Hello";
+String str2 = "World";
+String str3 = str1 + " " + str2;
+System.out.println(str3); //Output: Hello World
+
+Using the concat() method:
+String str1 = "Hello";
+String str2 = "World";
+String str3 = str1.concat(" ").concat(str2);
+System.out.println(str3); //Output: Hello World
+
+Q3. How do you find the length of a string in Java. Explain with an example.
+
+Ans:Using length() method 
+Example
+class Test{
+    public static void main(String args[]){
+      String str="sonu";
+      System.out.print(str.length());
+   }
+   }
+
+Q4. How do you compare two strings in Java? Give an example.
+
+Ans:To compare 2 Strings in java we use following approach
+a. == operator
+It compares the reference of the Object.
+b. equals()
+It compares the contents of two objects.
+
+Q5. Write a program to find the length of the string "refrigerator".
+
+Ans:class Test{
+    public static void main(String args[]){
+      String str="refrigerator";
+      System.out.print(str.length());
+   }
+   }
+
+Q6. Write a program to check if the letter 'e' is present in the word 'Umberalla'. 
+
+Ans:
+class Test{
+    public static void main(String args[]){
+      String str="Umberalla";
+      boolean present=false;
+      for(int i=0;i<str.length();i++)
+      {
+        if(str.charAt(i)=='e')
+        {
+            present=true;
+        }
+      }
+      System.out.print(present);
+   }
+   }
+
+
+Q7. Write a program to delete all consonants from the string "Hello,have a good day".
+
+Ans:
+class Test{
+    public static void main(String args[]){
+      String str="Hello,have a good day";
+      int n=str.length();
+      String str2="";
+      for(int i=0;i<n;i++)
+      {
+        if(str.charAt(i)=='e'||str.charAt(i)=='a'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'||str.charAt(i)==' ')
+        {
+            str2=str2+str.charAt(i);
+        }
+      }
+      System.out.print(str2);
+   }
+   }
+
