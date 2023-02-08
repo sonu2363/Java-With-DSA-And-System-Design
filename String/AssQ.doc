@@ -1,1 +1,260 @@
-Q1. WAP(Write a Program) to remove 
+Q1. WAP(Write a Program) to remove Duplicates from a String.(Take any String example with Duplicates character)
+
+Ans:
+import java.util.Arrays;
+
+public class test {
+    public static void main(String args[]) {
+        String str1="apple";
+        String str2="";
+        char arr[]=str1.toCharArray();
+        Arrays.sort(arr);
+        int j=0;
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]!=arr[i+1])
+            {
+                str2+=arr[j++];
+            }
+
+        }
+        str2+=arr[j];
+        System.out.println(str2);
+
+    }
+}
+
+Q2. WAP to print Duplicates character from the String
+
+Ans:
+import java.util.Arrays;
+
+public class test {
+    public static void main(String args[]) {
+        String str1="aapple";
+        String str2="";
+        char arr[]=str1.toCharArray();
+        Arrays.sort(arr);
+        int j=0;
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]==arr[i+1])
+            {
+                str2+=arr[i];
+            }
+
+        }
+       
+        System.out.println(str2);
+
+    }
+}
+
+Q3. WAP to check if "2552" is palindrome or not?
+
+Ans:
+public class test {
+    public static void main(String args[]) {
+        String str1="2552";
+        String str2="";
+       char arr[]=str1.toCharArray();
+       for(int i=str1.length()-1;i>=0;i--)
+       {
+        str2+=arr[i];
+       }
+       if(str2.equals(str1))
+       {
+        System.out.println("Palindrome");
+       }
+       else
+       {
+        System.out.println("Not a Palindrome");
+       }
+
+    }
+}
+
+Q4. WAP to count the number of consonants, vowels, special characters in a String.
+
+Ans:
+public class test {
+    public static void main(String args[]) {
+        String str1="sonusah";
+      
+        int vowels=0,cons=0,special=0;
+        str1.toLowerCase();
+        char arr[]=str1.toCharArray();
+      
+       for(int i=0;i<arr.length;i++)
+       {
+        if(arr[i]>=65&&arr[i]<=90 || arr[i]>=97&&arr[i]<=122)
+        {
+           if(arr[i]=='a' || arr[i]=='e' || arr[i]=='i' || arr[i]=='o' || arr[i]=='u')
+           {
+            vowels++;
+           }
+           else
+           {
+            cons++;
+           }
+        }
+        else
+        {
+            special++;
+        }
+       }
+
+       System.out.println("Vowels:"+vowels);
+       System.out.println("Consonants:"+cons);
+       System.out.println("Specials:"+special);
+    }
+}
+
+Q5. WAP to implement Anagram checking least inbuilt methods being used.
+
+Ans:
+  public class test {
+    public static void main(String args[]) {
+        String s1="sonu sah";
+        String s2="sonu ash";
+         // remove spaces and convert to lowercase
+         s1 = s1.replaceAll(" ", "").toLowerCase();
+         s2 = s2.replaceAll(" ", "").toLowerCase();
+ 
+         // check if the lengths of the strings are not equal
+         if (s1.length() != s2.length()) {
+             System.out.println("Not a anagram");
+         }
+         else
+         {
+            // create a frequency table for each string
+         int[] freq = new int[26];
+         for (int i = 0; i < s1.length(); i++) {
+             freq[s1.charAt(i) - 'a']++;
+             freq[s2.charAt(i) - 'a']--;
+         }
+
+         Boolean flag=true;
+ 
+         // check if the frequency table has all zeros
+         for (int i = 0; i < 26; i++) {
+             if (freq[i] != 0) {
+                flag=false;
+                break;
+             }
+         }
+         if(flag)
+         {
+            System.out.println("Anagram");
+
+         }
+         else
+         {
+            System.out.println("Not A Anagram");
+         }
+         }
+     }
+    }
+
+Q6. WAP to implement Pangram checking with least inbuilt methods being used.
+
+Ans:
+   public class test {
+    public static void main(String args[]) {
+        String s1="sonu sah";
+     
+         // remove spaces and convert to lowercase
+         s1 = s1.replaceAll(" ", "").toLowerCase();
+
+        // create a frequency array for each characters
+         int[] freq = new int[26];
+         for (int i = 0; i < s1.length(); i++) {
+             freq[s1.charAt(i) - 'a']++;
+             
+         }
+
+         Boolean flag=true;
+ 
+         // check if the frequency table has all zeros
+         for (int i = 0; i < 26; i++) {
+             if (freq[i] == 0) {
+                flag=false;
+                break;
+             }
+         }
+         if(flag)
+         {
+            System.out.println("Pangram");
+
+         }
+         else
+         {
+            System.out.println("Not A Pangram");
+         }
+         
+     }
+    }
+
+Q7. WAP to find if String contains all unique characters.
+    
+Ans:
+import java.util.Arrays;
+
+public class test {
+    public static void main(String args[]) {
+        String s1="sonu sah";
+        s1=s1.replaceAll(" ","");
+        char arr[]=s1.toCharArray();
+       
+        Arrays.sort(arr);
+        Boolean flag=true;
+        
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]==arr[i+1])
+            {
+                flag=false;
+
+            }
+        }
+        if(flag)
+        {
+            System.out.println("All unique");
+        } 
+        else
+        {
+            System.out.println("Not unique");
+        }
+
+     }
+    }
+
+Q8. WAP to find the maximum occuring character in a string.
+
+Ans:
+public class test {
+    public static void main(String args[]) {
+        String s1="sonu sah";
+        s1=s1.replaceAll(" ","");
+        char arr[]=s1.toCharArray();
+       
+        int freq[]=new int[26];
+      
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            freq[arr[i]-'a']++;
+        }
+        int maxi=Integer.MAX_VALUE, max_char=0;
+        for(int i=0;i<26;i++)
+        {
+            if(freq[i]>maxi)
+            {
+                maxi=freq[i];
+                max_char=i;
+            }
+        }
+        System.out.println("Maximum character:"+arr[max_char]);
+
+     }
+    }
