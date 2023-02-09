@@ -1,0 +1,62 @@
+Q1. What is Mutable String in Java. Explain with an example.
+
+Ans:Once if we create a String , on that String if we try to perform any operation 
+and if those changes get reflected in the same object then such strings are called 
+"Mutable String".
+           Example:StringBuffer , StringBuilder
+
+Q2. WAP to reverse a String 
+Input:"PWSKILLS"
+Output:"SLLIKSPW"
+
+Ans:
+class Test {
+    public static void main(String[] args){
+      String str1 = "Good"; 
+      String str2="";
+      char arr[]=str1.toCharArray();
+      for(int i=arr.length-1;i>=0;i--)
+      {
+        str2+=arr[i];
+        
+      }
+      System.out.println(str2); 
+    }
+  }
+
+Q3. WAP to reverse a sentence while preserving the position.
+Input:Think Twice
+Output:knihT eciwT
+
+Ans:
+class Test {
+    public static void main(String[] args){
+      String str1 = "Good Morning"; 
+      String str2="";
+      String arr[]=str1.split(" ");
+      for(String elem:arr)
+      {
+        for(int i=elem.length()-1;i>=0;i--)
+        {
+          str2+=elem.charAt(i);
+        }
+        str2+=" ";       
+      }
+      System.out.println(str2); 
+    }   
+  }
+
+Q4. WAP to sort a string alphabetically?
+
+Ans:
+import java.util.Arrays;
+
+class Test {
+    public static void main(String[] args){
+      String str1 = "good";
+      char arr[]=str1.toCharArray();
+      Arrays.sort(arr);
+      System.out.println(new String(arr));
+      
+    }   
+  }
