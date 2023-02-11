@@ -1,0 +1,98 @@
+Q1. What is Encapsulation in Java? Why is called it Data Hiding?
+
+Ans:Binding of data and corresponding methods into a single unit is called
+"Encapsulation".
+If any java class follows data hiding and abstraction then such class is
+referred as "Encapsulated class".
+
+In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
+
+Q2. What are the important features of Encapsulation?
+
+Ans: Data Hiding and Abstraction
+
+Q3. What are getter and setter methods in Java. Explain with an example.
+
+Ans:Setter methods are used to set the value to the instance variables of the class.
+
+Syntax for setter method
+a. compulsory the method name should start with set.
+b. it should be public.
+c. return type should be void.
+d. compulsorily it should have some argument.
+
+Getter methods are used to get the value from the instance variables of the class.
+
+Syntax for getter method
+a. compulsory the method name should start with get.
+b. it should be public.
+c. return type should not be void.
+d. compulsorily it should not have any argument.
+
+For example:
+class Student{
+    private int age;
+    public int getAge() {//getter method
+        return this.age;
+    }
+
+    public void setAge(int age) {//setter method
+        this.age = age;
+    }
+}
+public class Demo {
+      public static void main(String[] args)
+    {
+        Student obj=new Student();      
+        obj.setAge(18);
+        int age=obj.getAge();
+        System.out.println(age);     
+    }
+}
+
+Q4. What is the use of this keyword in java?
+
+Ans:If both local variable and instance variable have the same name inside the
+method then it would result in a name-clash and jvm will always give
+preference for local variable. This approach is called the
+“Shadowing problem”. To avoid this problem we use "this" keyword.
+
+For example:
+class Student{
+    private int age;
+    public int getAge() {//getter method
+        return this.age; //this keyword used
+    }
+
+    public void setAge(int age) {//setter method
+        this.age = age; this keyword used
+    }
+}
+public class Demo {
+      public static void main(String[] args)
+    {
+        Student obj=new Student();      
+        obj.setAge(18);
+        int age=obj.getAge();
+        System.out.println(age);     
+    }
+}
+
+Q5. What is the advantage of Encapsulation?
+
+Ans:
+1. We can achieve security.
+
+2. Enhancement becomes easy.
+
+3. Maintainability and modularisation becomes easy.
+
+4. It provides flexibility to the user to use the system very easily.
+
+Q6. How to achieve encapsulation in Java? Give an example.
+
+Ans: To achieve encapsulation in Java −
+
+1. Declare the variables of a class as private.
+
+2. Provide public setter and getter methods to modify and view the variables values.
