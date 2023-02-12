@@ -1,0 +1,142 @@
+Q1. What is a Constructor?
+
+Ans:Object creation is not enough, compulsorily we should perform initialization then
+only the object is in a position to provide the response properly.
+
+ Whenever we are creating an object some piece of the code will be executed
+automatically to perform initialization of an object. This piece of code is nothing
+but a constructor.
+
+ Main objective of the constructor is nothing but initialisation of Object.
+
+ Q2. What is Constructor Chaining?
+
+ Ans:A class can contain more than one constructor and all these constructors have
+the same name they differ only in the type of argument, this is called as
+ "Constructor Overloading" or "Constructor Chaining".
+
+ Q3. Can we call a subclass constructor from a superclass constructor?
+
+ Ans:No
+ class SuperClass{
+     SuperClass(){
+        System.out.println("SuperClass constructor");
+        SubClass();
+    }
+}
+public class SubClass extends SuperClass
+{
+    SubClass (){
+        System.out.println("Subclass constructor");
+    }
+	public static void main(String[] args) {
+		System.out.println("Constructor test");
+	}
+}
+
+Output:
+SubClass.java:11: error: cannot find symbol
+        SubClass();
+        ^
+  symbol:   method Main()
+  location: class SuperClass
+
+ Q4. What happens if you keep a return type for a constructor?
+
+ Ans:If we keep return type for a constructor it will be treated as a normal method.
+
+
+class Main
+{
+    String Main(){
+        System.out.println("Hello World");
+        return "Hello W3spoint.com";
+    }
+	public static void main(String[] args) {
+		Main object = new Main();
+		 System.out.println(object.Main());
+	}
+}
+
+Output:
+Hello World 
+Hello W3spoint.com
+
+Q5. What is No-arg constructor?
+
+Ans:No-Arg Constructor - a constructor that does not accept any arguments.
+
+Q6. How is a No-arg constructor different from the default Constructor?
+
+Ans:If a constructor does not accept any parameters, it is known as a no-argument constructor. For example,
+class Company {
+  String name;
+
+  // public constructor
+  public Company() {
+    name = "Sonu";
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+
+    // object is created in another class
+    Company obj = new Company();
+    System.out.println("Name = " + obj.name);
+  }
+}
+Output:
+ name = Sonu
+
+If we do not create any constructor, the Java compiler automatically create a no-arg constructor during the execution of the program. This constructor is called default constructor.
+
+class Main {
+
+  int a;
+  boolean b;
+
+  public static void main(String[] args) {
+
+    // A default constructor is called
+    Main obj = new Main();
+
+    System.out.println("Default Value:");
+    System.out.println("a = " + obj.a);
+    System.out.println("b = " + obj.b);
+  }
+}
+
+Output:
+Default Value:
+a = 0
+b = false
+
+Q7. When do we need Constructor Overloading?
+
+Ans:Constructor overloading can make it easier for others to use our class by providing multiple options for object initialization, and can make your code more readable and maintainable by keeping the initialization logic for each object in one place
+
+Q8. What is default Constructor.Explain with an example?
+
+Ans:If we do not create any constructor, the Java compiler automatically create a no-arg constructor during the execution of the program. This constructor is called default constructor.
+
+class Main {
+
+  int a;
+  boolean b;
+
+  public static void main(String[] args) {
+
+    // A default constructor is called
+    Main obj = new Main();
+
+    System.out.println("Default Value:");
+    System.out.println("a = " + obj.a);
+    System.out.println("b = " + obj.b);
+  }
+}
+
+Output:
+Default Value:
+a = 0
+b = false
