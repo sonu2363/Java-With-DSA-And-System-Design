@@ -1,0 +1,224 @@
+Q1. What is inheritance in Java?
+
+Ans:The technique of creating a new class by using an existing class functionality 
+is called Inheritance in Java.
+
+Q2. What is superclass and subclass?
+
+Ans:A class from where a subclass inherits features is called superclass. It is also 
+called base class or parent class.
+A class that inherits all the members (fields, methods, and  nested classes) from another
+class is called a subclass.It is also called a derived class,child class or extended
+class.
+
+Q3. How is inheritance implemented/achieved in Java?
+
+Ans:Inheritance can be implemented or achieved by using two keywords:
+
+1. extends:extends is a keyword that is used for developing the inheritance between
+            two classes and two interfaces.
+
+2. implements:implements keyword is used for developing the inheritance between a class
+               and interface.
+
+Q4. What is polymorphism?
+
+Ans:Polymorphism in OOP is the ability of an entity to take several forms.In other 
+words, it refers to the ability of an object (or a reference to an object) to take
+different form of objects.
+For example:
+class Aeroplane2 {
+   public void takeoff(){
+    System.out.println("Aeroplane is taking off");
+   }
+   public void fly(){
+    System.out.println("Aeroplane is flying");
+   } 
+}
+class cargoPlane2 extends Aeroplane2{
+    public void takeoff()
+    {
+        System.out.println("cargo Plane requires longer runway");
+    }
+    public void fly()
+    {
+        System.out.println("cargo Plane flies at lower height");
+    } 
+}
+class passengerPlane2 extends Aeroplane2{
+    public void takeoff()
+    {
+        System.out.println("Passenger Plane requires medium runway");
+    }
+    public void fly()
+    {
+        System.out.println("cargo Plane flies at medium height");
+    }
+}
+class fighterPlane2 extends Aeroplane2{
+    public void takeoff()
+    {
+        System.out.println("Fighter Plane requires small runway");
+    }
+    public void fly()
+    {
+        System.out.println("Fighter Plane flies at high height");
+    }
+}
+class Airport{
+    public void poly(Aeroplane2 ref){
+        ref.takeoff();
+        ref.fly();
+        System.out.println("-------------------------------");
+    }
+}
+class LaunchPoly{
+    public static void main(String[] args)
+    {  
+    cargoPlane2 cp=new cargoPlane2();
+    passengerPlane2 pp=new passengerPlane2();
+    fighterPlane2 fp=new fighterPlane2();
+    Airport a =new Airport();
+    a.poly(cp);
+    a.poly(pp);
+    a.poly(fp);
+    }
+}
+
+Q5. Differentiate between method overloading and overriding.
+
+Ans:Method Overloading:
+1. It implements "compile time polymorphism"
+2. The method called is determined at compile time.
+3. It occurs between the methods in the same class.
+4. Have the same name, but the parameters are different.
+5. On error, it can be caught at compile time. 
+
+Method Overriding:
+1. It implements "run time polymorphism".
+2. The method call is determined at runtime based on the object type.
+3. It occurs between superclass and subclass.
+4. Have the same signature (name and method arguments).
+5. On error, the effect will be visible at runtime.
+
+Q6. What is an abstraction.Explain with an example.
+
+Ans:Abstraction basically deals with hiding the internal details and showing the essential 
+things to the user.
+
+For example:
+abstract class Sports{
+    abstract void jump();
+}
+
+class Swimming extends Sports{
+    void jump(){
+        System.out.println("jump");
+    }
+   
+}
+class Launch{
+    public static void main(String[] args){
+
+        Swimming s=new Swimming();
+        s.jump();
+     }
+    
+}
+
+Q7. What is the difference between an abstract method and final method in Java?
+Explain with an example.
+
+Ans:The abstract method is incomplete while the final method is regarded as complete.
+The only way to use an abstract method is by overriding it , but you cannot override 
+a final method in java.
+For example:
+//Abstract method
+abstract class Sports{
+    abstract void jump();
+}
+//final method
+final class parentClass{
+    void showData(){
+        System.out.println("Hello")
+    }
+}
+
+Q8. What is the final class in Java?
+
+Ans:A class declared with final keyword is known as the final class. A final class can't
+be inherited by subclasses. By using the final class, we can restrict the inheritance of
+the class. We can create a class as a final class only if it is complete in nature,
+which means it must not be an abstract class. In Java, all the wrapper classes are 
+final classes like String, Integer, etc.
+If we try to inherit a final class, then the compiler throws an error at compilation time.
+We can't create a class as immutable without their final class.
+final class ParentClass
+{
+void showData()
+{
+System.out.println("This is a method of final Parent class");
+}
+}
+//It will throw compilation error
+class ChildClass extends ParentClass
+{
+void showData()
+{
+System.out.println("This is a method of Child class");
+}
+}
+class MainClass
+{
+public static void main(String arg[])
+{
+ParentClass obj = new ChildClass();
+obj.showData();
+}
+}
+
+Q9. Difference between abstraction and encapsulation.
+
+Ans:Abstraction:
+1. Abstraction is a feature of OOPs that hides the unnecessary details but shows the
+essential information.
+2. It solves an issue at the design level.
+3. It focuses on the external lookout.
+4. It can be implemented using abstract classes and interfaces.
+5. It is the process of gaining information.
+6. In abstraction, we use abstract classes and interfaces to hide the code complexities.
+7.The objects are encapsulated that helps to perform abstraction.
+
+Encapsulation:
+1. Encapsulation is also a feature of OOPS . It hides the code and data into a single
+entity or unit so that the data can be protected from the outside world.
+2. Encapsulation solves an issue at implementation level. 
+3. It focuses on internal working. 
+4. It can be implemented by using the access modifiers(private , public, protected).
+5. It is the process of containing the information.
+6. We use the getters and setters methods to hide the data. 
+7. The object need not to abstract that result in encapsulation.
+
+Q10. Difference between run-time and compile-time polymorphism . Explain with an example.
+
+Ans:Compile-time polymorphism:
+1. Compile-time polymorphism is less flexible as all things execute at compile-time.
+2. In Compile-time polymorphism , the call is resolved by the compiler.
+3. Inheritance is not involved. 
+4. It is also known as Static binding, Early binding and overloading as well.
+5. It provides fast execution because the method that needs to be executed is known early 
+at the compile-time.
+6. Method overloading is the compile-time polymorphism where more than one method 
+shares the same name with different parameters or signature and different return type.
+
+Run-time polymorphism:
+1. Run-time polymorphism is more flexible as all things execute at run time. 
+2. In runtime polymorphism, the call is not resolved by the compiler.
+3. Inheritance is involved.
+4. It is also known as Dynamic binding, late binding and  Overriding as well.
+5. It provides slow execution as compared to early binding because the method that needs
+to be executed is known at the runtime.
+6. Method overriding is the runtime polymorphism having the same method with same
+parameters or signature but associated with compared, different classes.
+
+
