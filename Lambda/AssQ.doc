@@ -1,0 +1,111 @@
+Q1. What is the lambda expression of Java8?
+
+Ans:The lambda expression is used to provide the implementation of an interface
+which has functional interface. It saves a lot of code. In case of lambda expression,
+we don't need to define the method again for providing the implementation.Here, 
+we just write the implementation code:
+Java lambda expression is treated as a function, so compiler does not create 
+.class file.
+
+Functional interface:
+Lambda expression provides implementation of functional interface.An interface which 
+has only one abstract method is called functional interface.Java provides an
+anotation @FunctionalInterface, which is used to declare an interface as functional
+interface.
+
+Java Lambda expression Syntax:
+
+1.Argument-list:It can be empty and non-empty as well.
+2.Arrow-token:It is used to link Argument-list and body of expression.
+3.Body:It contains expression and statements for lambda expression
+
+Q2.Can you pass lambda expressions to a method?When?
+
+Ans:Yes, you can pass a lambda expression to a method provided it is expecting a 
+functional interface. For example:
+
+interface TestInterface {
+   boolean test(int a);
+}
+class Test {
+   // lambda expression can be passed as first argument in the check() method
+   static boolean check(TestInterface ti, int b) {
+      return ti.test(b);
+   }
+}
+public class LambdaExpressionPassMethodTest {
+   public static void main(String arg[]) {
+      // lambda expression
+      boolean result = Test.check((x) -> (x%2) == 0, 10);
+      System.out.println("The result is: "+ result);
+   }
+}
+
+Output:
+The result is: true
+
+Q3. What is the functional interface in Java8?
+
+Ans:An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. It can also declare methods of object class.
+
+Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. It is a new feature in Java, which helps to achieve functional programming approach.
+
+For example:
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);  
+}  
+public class FunctionalInterfaceExample implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample fie = new FunctionalInterfaceExample();  
+        fie.say("Hello there");  
+    }  
+}  
+
+Q4.Why do we use lambda expressions in Java?
+
+Ans:Why use Lambda expression:
+1. To provide the implementation of Functional interface.
+2. Less coding
+
+Without Lambda expression:
+
+interface Drawable{  
+    public void draw();  
+}  
+public class LambdaExpressionExample {  
+    public static void main(String[] args) {  
+        int width=10;  
+  
+        //without lambda, Drawable implementation using anonymous class  
+        Drawable d=new Drawable(){  
+            public void draw(){System.out.println("Drawing "+width);}  
+        };  
+        d.draw();  
+    }  
+}  
+
+With LambdaExpressionExample:
+@FunctionalInterface  //It is optional  
+interface Drawable{  
+    public void draw();  
+}  
+  
+public class LambdaExpressionExample2 {  
+    public static void main(String[] args) {  
+        int width=10;  
+          
+        //with lambda  
+        Drawable d2=()->{  
+            System.out.println("Drawing "+width);  
+        };  
+        d2.draw();  
+    }  
+}  
+
+Q5.Is it mandatory for a lambda expression to have parameters?
+
+Ans:NO
