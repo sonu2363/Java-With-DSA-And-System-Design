@@ -1,0 +1,83 @@
+Q1. What is a Map in Java?
+
+Ans:A map contains values on the basis of key , i.e key and value pair. Each key and value
+pair is known as an entry. A Map contains unique keys.
+A Map is useful if you have to search , update or delete elements on the basis of a key.
+
+Q2. What are the commonly used implementations of Map in Java?
+
+Ans:There are two interfaces for implementing Map in java: Map and SortedMap, and three 
+classes : HashMap, LinkedHashMap and TreeMap.
+
+Q3. What is the difference between HashMap and TreeMap?
+
+Ans:HashMap is an ordered collection that uses hashing to store the key-value pairs, 
+while TreeMap is a sorted collection that stores the key-value pairs in a sorted order
+based on the natural order of the keys or a custom Comparator.
+
+Q4. How do you check if a key exists in a Map in Java?
+
+Ans:We can check if a key exists in a Map in Java using the containsKey() method or the 
+get() method.The containsKey() method returns a boolean value indicating whether the Map
+contains the specified key, while the get() method returns the value associated with the 
+specified key, or null if the key is not present in the Map.
+
+Q5. What are generics in Java?
+
+Ans:generics in java are used to provide type safety and code redundancy by allowing 
+the use of generic types.It allows classes, methods , and interfaces to be written 
+generically , without specifying the type of data being used.
+
+Q6. What are the benefits of usign generics in java?
+
+Ans:The benefits of using generics in java are:type safety, code reusability , improved
+readability, reduced code redundancy and improved performance.
+
+Q7. What is a generic class in Java?
+
+Ans:A generic class in java is a class that can work with different types of data.It is 
+defined using a type parameter enclosed in angle brackets, which represents the type of 
+data being used.
+Example: Single type parameter
+
+class Solution<T>
+{
+   T data;
+   public static T getData(){
+       return data;
+   }
+}
+Example: Multiple type parameters
+
+
+public class Pair<K, V> {
+
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+    this.key = key;
+    this.value = value;
+    }
+
+    public K getKey()    { return key; }
+    public V getValue() { return value; }
+}
+
+Q8. What is Type parameter in java generics?
+
+Ans:A Type parameter in java generics is a placeholder for the type of data that is used 
+by a generic class or method. It is defined using a single uppercase letter enclosed in
+angle brackets, such as <T> or <E>.
+
+Q9. What is a Generic method in java?
+
+Ans:A Generic method in java is a method that can work with different types of data.It is
+defined using a type parameter enclosed in angle brackets, which represents the type 
+of data being used.
+
+Q10. What is the difference between ArrayList and ArrayList<T>?
+
+Ans:ArrayList is a non-generic class, while ArrayList<T> is a generic class.ArrayList<T>
+provides type safety, as it can only store elements of the specified type, whereas
+ArrayList can store any type of element.
