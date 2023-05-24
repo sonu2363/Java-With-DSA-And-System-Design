@@ -1,0 +1,121 @@
+Q1. Program to display current date and time in java?
+
+Ans:import java.time.*;
+class DateTime{
+    public static void main(String[] args){
+        LocalDate date=LocalDate.now();
+        System.out.println(date);
+        LocalTime time=LocalTime.now();
+        System.out.println(time);
+    }
+}
+
+Output:
+2023-03-30
+10:33:11.025394800
+
+Q2. Write a program to convert a date to a string in the format "MM/dd/yyyy".
+
+Ans:import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+class DateToString{
+    public static void main(String[] args){
+        LocalDate date=LocalDate.of(2023,4,4);
+
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String formattedDate=date.format(formatter);
+
+        System.out.println("Formatted Date:"+formattedDate);
+
+    }
+}
+Output:
+Formatted Date: 04/04/2023
+
+Q3. What is the difference between collections and streams?Explain with example.
+
+Ans:1. Streams : It doesn't store data, it operates on the source data structures 
+i.e collection. Collection : It stores/holds all the data that the data structure
+currently has in a particular data structure like Set, List or Map.
+
+2. Streams:They use functional interfaces like lambda which makes it a good fit for 
+programming languages. Collections : They don't use functional interfaces.
+
+3. Streams : Java streams are consummable i.e; to traverse the stream, it needs to
+be created everytime. Collections : They are non-consummable i.e can be tranversable
+multiple times without creating it again..
+
+4. Streams : Java streams support both sequential  and parallel processing. 
+Collections : It supports parallel processing and parallel processing can be very 
+helpful in acheiving high performance.
+
+5. Streams : Streams are iterated internally by just mentioning the operations. 
+Collections : Collections are iterated externally using loops.
+
+Collections example : 
+import java.io.*;
+import java.util.*;
+
+class Main{
+    public static void main(String[] args)
+    {
+        List<String> CompanyList=new ArrayList<>();
+        CompanyList.add("Google");
+        CompanyList.add("Apple");
+        CompanyList.add("Microsoft");
+
+        Comparator<String> com=(String o1,String o2) -> o1.compareTo(o2);
+        Collections.sort(CompanyList,com);
+        for(String name:CompanyList)
+        {
+            System.out.println(name);
+        }
+
+    }
+}
+
+Output:
+Apple
+Google
+Microsoft
+
+Q4. What is enum in java?Explain with an example
+
+Ans:We can use enum to define a group of named consonants.Enums are used to represent
+a collection of related constants that have a common purpose.Each consonant in an enum
+is an instance of the enum type, and they are typically defined as public static final 
+fields.
+class EnumDemo{
+    public enum DayOfWeek{
+
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY,
+                             }
+public static void main(String args[])
+{
+    for(DayOfWeek d:DayOfWeek.values()){
+        System.out.prinln(d);
+            }
+     }
+}
+Here, we define an enum called "DayOfWeek" that represents the days of the week.The enum
+has seven constants, each representing a day of the week.The consonants are defined in
+all uppercase letters by convention.
+
+Q5. What are built-in annotations in java?
+
+Ans:@Override
+    @Deprecated
+    @SuppressWarnings
+    @FunctionalInterface
+    @Retention
+    @Target
+    @Documented
+    @Inherited
+    
