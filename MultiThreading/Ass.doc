@@ -1,0 +1,72 @@
+Q1. What do you mean by Multithreading? Why is it important?
+
+Ans:Multithreading in Java is a process of executing multiple threads simultaneously.
+
+A thread is a lightweight sub-process, the smallest unit of processing. Multiprocessing
+ and multithreading, both are used to achieve multitasking.
+
+ Multithreading saves time as you can perform multiple operations together. The threads are independent, so it does not block the user to perform multiple operations at the same time and also, if an exception occurs in a single thread, it does not affect other threads.
+
+ Q2. What are the benefits of using Multithreading?
+
+ Ans:1. It doesn't block the user because threads are independent and you can perform multiple operations at the same time.
+
+2. You can perform many operations together, so it saves time.
+
+3. Threads are independent, so it doesn't affect other threads if an exception occurs in a single thread.
+
+Q3. What is thread in Java?
+
+Ans:A thread is a lightweight sub-process, the smallest unit of processing. Multiprocessing
+ and multithreading, both are used to achieve multitasking.
+
+ Q4. What are the two ways of implementing thread in Java?
+
+ Ans:There are two ways to create a thread:
+
+By extending Thread class
+By implementing Runnable interface.
+
+1. Java Thread Example by extending Thread class
+FileName: Multi.java
+
+class Multi extends Thread{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+public static void main(String args[]){  
+Multi t1=new Multi();  
+t1.start();  
+ }  
+}  
+Output:
+
+thread is running...
+
+2. Java Thread Example by implementing Runnable interface
+FileName: Multi3.java
+
+class Multi3 implements Runnable{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+  
+public static void main(String args[]){  
+Multi3 m1=new Multi3();  
+Thread t1 =new Thread(m1);   // Using the constructor Thread(Runnable r)  
+t1.start();  
+ }  
+}  
+Output:
+
+thread is running...
+
+Q5. What's the difference between thread and process?
+
+Ans:Thread: It simply refers to the smallest units of the particular process. It has the ability to execute different parts (referred as a thread) of the program at the same time.
+
+Process:It simply refers to a program that is in execution i.e. , an active program. A process can be handled using PCB(Process Control Block)
+
+Q6.How can we create Daemon threas?
+
+Ans:
