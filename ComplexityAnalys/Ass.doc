@@ -1,0 +1,48 @@
+Q1. Analyze the time complexity of the following java code and suggest way to improve
+it:
+int sum=0;
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=i;j++){
+        sum++;
+    }
+}
+
+Ans:
+T.C-O(N*N)
+One way to improve the complexity of this code is to use a mathematical formula to find
+the sum instead of using nested loops.
+n*(n+1)/2;
+
+Q2. Find the value of T(2) for the recurrence relation T(N)=3T(N-1) + 12N, given that
+T(O)=5.
+Ans:Here, 
+T(N)=3T(N-1)+12N
+Substituting the values in the relation:
+T(1)=3T(0)+12=15+12=27
+T(2)=3T(1)+12*2=81+24=105
+
+Q3. Given a recurrence relation, solve it using a Substitution method.
+Relation:T(N)=T(N-1)+c
+
+Ans:Using the principle of mathematical induction:
+T(N)=T(N-1)+C
+T(N-1)=T(N-2)+C
+T(N-2)=T(N-3)+C
+..........
+..........
+Adding all above equations
+T(2)=T(1)+C
+Let us assume T(1) to be a constant value
+T(N)=k+C*N
+Therefore,T(N)<=C*N 
+
+Q4. Given an recurrence relation : 
+T(N)=16T(N/4)+N*2logN
+Find the time complexity of this relation using master theorem
+
+Ans:
+{T(n)=aT(n/b) + theta ((n^k)*(log^p)*n)},  Master's Theorem.
+Relation:T(N)=16T(N/4)+N*2logN
+Here,
+a=1,b=4,p=1,
+//I will do this assignment afterwards , after finishing Master's theorem 

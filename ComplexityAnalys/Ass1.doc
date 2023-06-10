@@ -1,0 +1,108 @@
+Q1. Write a program to print the sum of all the elements present on even indices in the
+given array?
+Input: arr[]={3,20,4,6,9}
+Output:16
+
+Ans:
+class sum{
+    public static void main(String[] args) {
+        int arr[]={3,20,4,6,9};
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            if(i%2==0){
+                sum+=arr[i];
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+Q2. Write a program to traverse over the elements of the array using for each loop and
+print all even elements.
+Input: arr[]={4,3,6,7,1}
+Output: 4 6
+
+Ans:
+class sum{
+    public static void main(String[] args) {
+        int arr[]={4,3,6,7,1};
+        
+        for(int num:arr){
+            if(num%2==0){
+                System.out.println(num+" ");
+            }
+        }
+        
+    }
+}
+
+Q3. Write a program to calculate the maximum element in an array.
+Input:arr[]={4,3,6,7,1}
+Output:7
+
+Ans:class sum{
+    public static void main(String[] args) {
+        int arr[]={4,3,6,7,1};
+        int largest=Integer.MIN_VALUE;
+        for(int num:arr){
+            if(num>largest)
+            {
+
+                largest=num;
+            }
+
+        }
+        System.out.println(largest);
+    }
+}
+
+Q4. Write a program to find out second largest element in a given array.
+Input:arr[]={4,3,6,7,1}
+Output:7
+
+Ans:
+
+class solution{
+    public static void main(String[] args) {
+        int arr[]={4,3,6,7,1};
+        int largest=Integer.MIN_VALUE,second_largest=0;
+        for(int num:arr){
+            if(num>largest)
+            {
+
+                second_largest=largest;
+                largest=num;
+            }
+
+        }
+        System.out.println(second_largest);
+    }
+}
+
+Q5. Given an array.Find the first peak element in the array.A peak element is an element
+that is greater than its just left and just right neighbour.
+Input:arr[]={1,3,2,6,5}
+Output:6
+
+Ans:
+class solution{
+    public static void main(String[] args) {
+        int arr[]={1,3,2,6,5};
+       int peak=-1;
+        for(int i=1;i<arr.length;i++){
+           if(arr[i]>arr[i-1]&&arr[i]>arr[i+1]){
+              peak=arr[i];
+              break;
+
+           }
+
+        }
+        if(peak!=-1){
+            System.out.println("peak element is :"+peak);
+        }
+        else{
+            System.out.println("not present");
+        }
+        
+    }
+}

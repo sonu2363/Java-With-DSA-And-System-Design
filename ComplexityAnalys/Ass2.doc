@@ -1,0 +1,174 @@
+Q1. Take m and n input from the user and m*n integer inputs from the user and print 
+the following:
+number of positive numbers
+number of negative numbers
+number of odd numbers
+number of even numbers
+number of 0
+Input:
+1 2 -3 4
+0 0 -4 2
+1 -1 2 3
+-4 -5 -7 0
+ 
+Output:
+number of positive numbers=7
+number of negative numbers=6
+number of odd numbers=7
+number of even numbers=9
+number of 0=3
+
+Ans:
+import java.util.Scanner;
+
+class Solution{
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int positiveCount=0,negativeCount=0,oddCount=0,evenCount=0,zeroCount=0;
+        System.out.println("enter the value of rows:");
+        int m=scanner.nextInt();
+
+        System.out.println("enter the value of columns:");
+        int n=scanner.nextInt();
+
+        int arr[][]=new int[m][n];
+        System.out.println("enter the elements of array:");
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scanner.nextInt();
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(arr[i][j]>0)
+                {
+                    positiveCount++;
+                }
+                if(arr[i][j]==0){
+                    zeroCount++;
+                }
+                if(arr[i][j]<0){
+                    negativeCount++;
+                }
+                if(arr[i][j]%2==0){
+                    evenCount++;
+                }
+                if(arr[i][j]%2!=0){
+                    oddCount++;
+                }
+                
+            }
+        }
+        System.out.println("Number of positive numbers="+positiveCount);
+        System.out.println("Numer of negative numbers="+negativeCount);
+        System.out.println("number of odd numbsers="+oddCount);
+        System.out.println("number of even numbers="+evenCount);
+        System.out.println("number of 0="+zeroCount);
+    }
+}
+
+Q2. Write a program to print the elements above the secondary diagonal in a user
+inputted square matrix.
+Input: 1 2 3
+       4 5 6
+       7 8 9
+Output: 1 2 4
+
+Ans:
+import java.util.Scanner;
+
+class Solution{
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter the value of rows:");
+        int m=scanner.nextInt();
+
+        System.out.println("enter the value of columns:");
+        int n=scanner.nextInt();
+
+        int arr[][]=new int[m][n];
+        System.out.println("enter the elements of array:");
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scanner.nextInt();
+            }
+        }
+        System.out.println("-------------------");
+       for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(i+j<m-1){
+                System.out.println(arr[i][j]);
+            }
+        }
+       }     
+    }
+}
+
+Q3. Write a program to print the elements of both the diagonals in a user inputted 
+square matrix in any order.
+Input: 1 2 3
+       4 5 6
+       7 8 9
+Output: 1 3 5 7 9
+
+Ans:
+import java.util.Scanner;
+
+class Solution{
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter the value of rows:");
+        int m=scanner.nextInt();
+
+        System.out.println("enter the value of columns:");
+        int n=scanner.nextInt();
+
+        int arr[][]=new int[m][n];
+        System.out.println("enter the elements of array:");
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scanner.nextInt();
+            }
+        }
+        System.out.println("-------------------");
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(i==j){
+                    System.out.println(arr[i][j]+" ");
+                }
+                else if(i+j==n-1){
+                    System.out.println(arr[i][j]+" ");
+                }
+            }
+        }
+        scanner.close();
+       }     
+}
+
+Q4. Write a program to find the largest element of a given 2D array of integers.
+
+Ans:
+class Solution{
+    public static void main(String[] args) {
+        int arr[][]={{1,2,3},{4,5,6},{7,9,8}};  
+        int largest=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr.length;j++){
+                if(largest<arr[i][j]){
+                    largest=arr[i][j];
+                }
+            }
+        }   
+        System.out.println(largest);
+}
+}
+
+Q5. Write a function which accepts a 2D array of integers and its size as argument and
+displays the element of middle row and the elements of middle column.Printing can be 
+done any order.
+Input: 1 2 3
+       4 5 6
+       7 8 9
+Output: 4 5 6 2 8
+
+Ans:
