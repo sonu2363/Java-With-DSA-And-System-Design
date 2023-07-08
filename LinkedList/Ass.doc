@@ -1,0 +1,237 @@
+Q1. Given a linked list and a key ‘X‘ in, the task is to check if X is present 
+in the linked list or not.
+Examples:
+14->21->11->30->10, X = 14
+Yes
+Explanation: 14 is present in the linked list.
+
+Ans:
+class LinkedList{
+    Node head;
+     
+    class Node{
+        int data;
+        Node next;
+
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void insertAtEnd(int newData){
+        //initalize the new node with the new data entered by the user
+        Node newNode=new Node(newData);
+
+        //Linkded list is empty
+        if(head==null){
+            head=new Node(newData);
+            return;
+        }
+
+        //Linked List is not empty
+        newNode.next=null;
+        
+        //traversing the linked list at the end of the node
+        Node temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=newNode;
+        return;
+    }
+   
+    
+   public void isPresent(int X){
+        Node curr=head;
+        while(curr!=null){
+            if(curr.data==X){
+                System.out.println("true");
+
+            }
+            curr=curr.next;
+        }
+        System.out.println("false");
+
+    }
+
+    public static void main(String[] args){
+        LinkedList Llist=new LinkedList();
+        Llist.insertAtEnd(2);
+        Llist.insertAtEnd(4);
+        Llist.insertAtEnd(8);
+        Llist.isPresent(8);
+        Llist.printNodes();
+        
+    }
+}
+
+Q2. Insert a node at the given position in a linked list. We are given a pointer 
+to a node, and the new node is inserted after the given node.
+
+Input :LL = 1 -> 2 -> 4 -> 5 -> 6 pointer = 2 value = 3.
+Output :
+1 -> 2 -> 3 -> 4 -> 5 -> 6
+
+Ans:
+class LinkedList{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void insertAfter(Node prev_node,int newData){
+        if(prev_node==null){
+            System.out.println("the previous node cannot contain null values");
+            return;
+        }
+        Node newNode=new Node(newData);
+        newNode.next=prev_node.next;
+        prev_node.next=newNode;
+    }
+    public void insertAtStart(int newData){
+        Node newNode=new Node(newData);
+        newNode.next=head;
+        head=newNode;
+    }
+    public void printNodes(){
+        Node curr=head;
+        while(curr!=null){
+            System.out.println(curr.data+" ");
+            curr=curr.next;
+        }
+    }
+    public static void main(String[] args){
+        LinkedList Llist=new LinkedList();
+        Llist.insertAtStart(4);
+        Llist.insertAtStart(2);
+        Llist.insertAtStart(8);
+        Llist.insertAfter(Llist.head.next.next,7);
+        Llist.printNodes();
+    }
+}
+
+Q3. Given the head of a sorted linked list, delete all duplicates such that each
+element appears only once.Return the linked list sorted as well.
+
+Example: 1->1->2
+Input : head=[1,1,2]
+Output : [1,2]
+
+Ans:
+class LinkedList{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void insertAfter(Node prev_node,int newData){
+        if(prev_node==null){
+            System.out.println("the previous node cannot contain null values");
+            return;
+        }
+        Node newNode=new Node(newData);
+        newNode.next=prev_node.next;
+        prev_node.next=newNode;
+    }
+    public void insertAtStart(int newData){
+        Node newNode=new Node(newData);
+        newNode.next=head;
+        head=newNode;
+    }
+    public void printNodes(){
+        Node curr=head;
+        while(curr!=null){
+            System.out.print(curr.data+" ");
+            curr=curr.next;
+        }
+    }
+    public void deleteDuplicates(){
+        Node curr=head;
+        while(curr!=null){
+            if(curr.next.data==curr.data){
+                curr.next=curr.next.next;
+            }
+            curr=curr.next;
+        }
+        
+    }
+    public static void main(String[] args){
+        LinkedList Llist=new LinkedList();
+        Llist.insertAtStart(4);
+        Llist.insertAtStart(4);
+        Llist.insertAtStart(2);
+        Llist.insertAtStart(8);
+        Llist.insertAtStart(8);
+        Llist.deleteDuplicates();
+     
+        Llist.printNodes();
+    }
+}
+
+Q4. Given the head of a singly linked list, return true if it is a palindrome or 
+false otherwise.
+
+Example 1: 
+Input:head=[1,2,2,1]
+Output:true
+
+Example 2:
+Input:head=[1,2]
+Output:false
+
+Ans:
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+       ListNode fast=head;
+        ListNode slow=head;
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        ListNode curr=slow;
+        ListNode prev=null;
+        ListNode next;
+        
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        ListNode head1=head;
+        ListNode head2=prev;
+        
+        while(head2!=null&&head1!=null){
+            if(head1.val!=head2.val){
+                return false;
+            }
+            head1=head1.next;
+            head2=head2.next;
+            
+        }
+        return true;       
+    }
+}
+
+Q5.Given two numbers represented by two lists, write a function that returns the 
+sum list.The sum list is a list representation of the addition of two input 
+numbers.
+Example:
+Input:
+List1:5->6->3//represents number 563
+List2:8->4->2//represents number 842
+Output:
+Resultant list : 1->4->0->5//represents 1405
+Explanation: 563+842=1405 
+
+Ans:
